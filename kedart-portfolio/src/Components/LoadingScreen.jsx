@@ -25,7 +25,7 @@ const LoadingScreen = () => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
       <div className="text-center">
         <div className="glass rounded-2xl p-8 mb-8 w-full max-w-lg">
-          <img src="/src/assets/kedarlogo.png" alt="Kedar Logo" className="w-full h-32 mx-auto mb-4 floating" />
+          <img src="/kedarlogo.png" alt="Kedar Logo" className="w-full h-32 mx-auto mb-4 floating" />
           <p className="text-white/80 mb-6">Loading Portfolio...</p>
           
           <div className="w-64 glass-dark rounded-full h-2 overflow-hidden">

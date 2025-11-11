@@ -20,7 +20,7 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#home">
-          <img src="/src/assets/kedarlogo.png" alt="Kedar Logo" className="w-full h-8 md:h-10" />
+          <img src="/kedarlogo.png" alt="Kedar Logo" className="w-full h-8 md:h-10" />
         </a>
         
         <nav className="hidden md:flex items-center space-x-8">
@@ -36,7 +36,7 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <img src="/src/assets/ALIENBUG-06 1.png" alt="Alien Bug" className="w-8 h-8 md:w-10 md:h-10 hidden md:block" />
+          <img src="/ALIENBUG-06 1.png" alt="Alien Bug" className="w-8 h-8 md:w-10 md:h-10 hidden md:block" />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden glass p-2 rounded-lg text-white"

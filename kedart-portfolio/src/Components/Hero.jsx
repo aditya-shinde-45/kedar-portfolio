@@ -38,11 +38,11 @@ const Hero = () => {
   return (
     <section ref={heroRef} id="home" className="min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="text-center relative">
-        <div className="glass rounded-3xl p-8 md:p-16 max-w-4xl mx-auto">
-          <h1 ref={titleRef} className="sporty-font text-4xl md:text-7xl font-bold text-white mb-4 text-glow">
+        <div className="glass rounded-3xl p-4 sm:p-8 md:p-16 max-w-4xl mx-auto w-full">
+          <h1 ref={titleRef} className="sporty-font text-2xl sm:text-4xl md:text-7xl font-bold text-white mb-4 text-glow">
             PORTFOLIO 25-26
           </h1>
-          <p ref={subtitleRef} className="text-xl md:text-2xl text-white/80 mb-8 gradient-text">
+          <p ref={subtitleRef} className="text-lg sm:text-xl md:text-2xl text-white/80 mb-6 sm:mb-8 gradient-text">
             Pixel to product..
           </p>
           
@@ -66,12 +66,12 @@ const Hero = () => {
 
         {/* Corner images */}
         <img 
-          src="/src/assets/topcorner.png" 
+          src="/topcorner.png" 
           alt="Top Corner" 
           className="absolute -top-5 -right-10 w-20 h-20 opacity-80 hidden md:block"
         />
         <img 
-          src="/src/assets/bottomcorner.png" 
+          src="/bottomcorner.png" 
           alt="Bottom Corner" 
           className="absolute -bottom-5 -left-10 w-20 h-20 opacity-80 hidden md:block"
         />

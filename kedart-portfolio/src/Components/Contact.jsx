@@ -87,11 +87,11 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="pixel-font text-3xl md:text-4xl font-bold text-white text-center mb-12 text-glow">
+        <h2 className="pixel-font text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-8 sm:mb-12 text-glow">
           GET IN TOUCH
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div className="space-y-8">
             <div className="glass rounded-2xl p-8">
               <h3 className="pixel-font text-2xl font-bold text-white mb-6 text-glow">

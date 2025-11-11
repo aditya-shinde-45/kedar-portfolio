@@ -17,22 +17,22 @@ const Skills = () => {
   ];
 
   const toolIcons = [
-    <i className="fi fi-brands-illustrator text-6xl"></i>,
-    <i className="fi fi-brands-photoshop text-6xl"></i>,
-    <i className="fi fi-brands-indesign text-6xl"></i>,
-    <i className="fi fi-brands-after-effects text-6xl"></i>,
-    <i className="fi fi-brands-figma text-6xl"></i>,
-    <img src="/src/assets/dreamweaver.png" alt="Dreamweaver" className="w-16 h-16" />
+    <i className="fi fi-brands-illustrator text-4xl sm:text-5xl md:text-6xl"></i>,
+    <i className="fi fi-brands-photoshop text-4xl sm:text-5xl md:text-6xl"></i>,
+    <i className="fi fi-brands-indesign text-4xl sm:text-5xl md:text-6xl"></i>,
+    <i className="fi fi-brands-after-effects text-4xl sm:text-5xl md:text-6xl"></i>,
+    <i className="fi fi-brands-figma text-4xl sm:text-5xl md:text-6xl"></i>,
+    <img src="/dreamweaver.png" alt="Dreamweaver" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" />
   ];
 
   return (
     <section id="skills" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="pixel-font text-3xl md:text-4xl font-bold text-white text-center mb-12 text-glow">
+        <h2 className="pixel-font text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-8 sm:mb-12 text-glow">
           SKILLS & EDUCATION
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Education */}
           <div className="glass rounded-2xl p-8">
             <h3 className="pixel-font text-2xl font-bold text-white mb-6 text-glow">EDUCATION</h3>
@@ -89,9 +89,9 @@ const Skills = () => {
       
       {/* Tools - Full Width */}
       <div className="w-full py-8">
-        <h3 className="sporty-font text-2xl font-bold text-white mb-6 text-glow text-center">TOOLS & SOFTWARE</h3>
+        <h3 className="sporty-font text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 text-glow text-center">TOOLS & SOFTWARE</h3>
         <div className="overflow-hidden">
-          <div className="flex animate-slide gap-16">
+          <div className="flex animate-slide gap-8 sm:gap-12 md:gap-16">
             {[...toolIcons, ...toolIcons, ...toolIcons].map((icon, index) => (
               <div key={index} className="glass-dark p-4 rounded-full text-white/90">
                 {icon}

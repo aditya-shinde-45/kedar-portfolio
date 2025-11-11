@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <LoadingScreen />
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-black overflow-x-hidden">
         <div className="backdrop-blur-sm bg-white/5">
           <Header />
           <Hero />
