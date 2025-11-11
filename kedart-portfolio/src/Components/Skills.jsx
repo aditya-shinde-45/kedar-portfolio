@@ -8,12 +8,14 @@ const Skills = () => {
   };
 
   const skills = [
+    { name: "Wireframing", level: 85 },
     { name: "User Research", level: 90 },
-    { name: "Wire framing", level: 85 },
-    { name: "Visual Design", level: 95 },
-    { name: "Brand Designing", level: 80 },
     { name: "Prototyping", level: 88 },
-    { name: "UI/UX Design", level: 92 }
+    { name: "Usability Testing", level: 85 },
+    { name: "Information Architecture", level: 87 },
+    { name: "Visual Design", level: 95 },
+    { name: "Typography", level: 90 },
+    { name: "Design Systems", level: 88 }
   ];
 
   const toolIcons = [
@@ -93,7 +95,7 @@ const Skills = () => {
         <div className="overflow-hidden">
           <div className="flex animate-slide gap-8 sm:gap-12 md:gap-16">
             {[...toolIcons, ...toolIcons, ...toolIcons].map((icon, index) => (
-              <div key={index} className="glass-dark p-4 rounded-full text-white/90">
+              <div key={index} className="text-white/90">
                 {icon}
               </div>
             ))}

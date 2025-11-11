@@ -39,7 +39,7 @@ const Hero = () => {
     <section ref={heroRef} id="home" className="min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="text-center relative">
         <div className="glass rounded-3xl p-4 sm:p-8 md:p-16 max-w-4xl mx-auto w-full">
-          <h1 ref={titleRef} className="sporty-font text-2xl sm:text-4xl md:text-7xl font-bold text-white mb-4 text-glow">
+          <h1 ref={titleRef} className="sporty-font text-2xl sm:text-4xl md:text-7xl font-bold text-white mb-4">
             PORTFOLIO 25-26
           </h1>
           <p ref={subtitleRef} className="text-lg sm:text-xl md:text-2xl text-white/80 mb-6 sm:mb-8 gradient-text">

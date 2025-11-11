@@ -9,7 +9,7 @@ const Works = () => {
       title: "EduBridge Mobile App",
       category: "Mobile UI/UX",
       description: "A comprehensive educational platform connecting students with tutors. Features include real-time messaging, video calls, and progress tracking.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD_t1nngMhWq36zbsLRkcyfFEOe1A1DG1jXFZksb5WyvMi0cWWiBJd6atiJ25cnedw3rZBOg-AcijIoceVAH3LvZ3Zmq9auC8uJbtDo_kdgTWATUAhw4KkEw5QArpCKIiFezPLyxWrE_g_wW0578cqZwb6zIEzcP_GrU2lOUI-AAUs0x-_vXvmd2qNREsxCstmiUBaxL9ES7EtRZyBjfmM4FJNDB-AgKXJjlcUTeHQ09_gexykpkQJi1JiQmuwZuTIExzHA_b2qJw",
+      image: "/edubridgeapp.png",
       technologies: ["Figma", "Prototyping", "User Research"],
       link: "#"
     },
