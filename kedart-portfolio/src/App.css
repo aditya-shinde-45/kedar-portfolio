@@ -227,13 +227,28 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
-  padding: 4rem;
+  padding: 2rem;
   text-align: center;
   width: 100%;
+  max-width: 90vw;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
   animation: glassCardFadeIn 1.2s ease-out;
+}
+
+@media (min-width: 640px) {
+  .hero-glass-card {
+    padding: 3rem;
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-glass-card {
+    padding: 4rem;
+    max-width: 95%;
+  }
 }
 
 .hero-glass-card::before {
@@ -403,12 +418,7 @@ body {
   50% { opacity: 1; }
 }
 
-@media (max-width: 768px) {
-  .hero-glass-card {
-    padding: 2rem;
-    margin: 1rem;
-  }
-}
+
 
 /* Background Grid */
 .grid-background {

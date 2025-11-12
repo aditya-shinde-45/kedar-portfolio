@@ -20,14 +20,14 @@ const Works = () => {
       description: "Mobile application design - alumni and student connection platform. Conducted analysis, user research, interviews & surveys, Created wire frames, user flows, low fidelity, high-fidelity, visual design & prototypes in Figma.",
       image: "/edubridgeapp.png",
       technologies: ["Figma", "Prototyping", "User Research"],
-      link: "#"
+      link: "https://www.behance.net/gallery/238179247/Edubridge-application-design"
     },
     {
       id: 2,
-      title: "Dashboard design - emergency response dashboard for police dept",
+      title: "Tourist safety assists",
       category: "Web UI/UX",
       description: "Did competitor analysis, user research, interviews & surveys, Making wire frames, user flows, low fidelity, high-fidelity, visual design & prototypes in Figma and figjam.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      image: "/dashboard.png",
       technologies: ["Figma", "FigJam", "User Research"],
       link: "#"
     },
