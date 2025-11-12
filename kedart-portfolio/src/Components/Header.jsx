@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'glass py-2' : 'py-4'
+      isScrolled ? 'py-2' : 'py-4'
     }`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#home">

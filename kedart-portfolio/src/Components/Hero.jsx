@@ -3,32 +3,127 @@ import { gsap } from 'gsap';
 
 const Hero = () => {
   const heroRef = useRef();
+  const cardRef = useRef();
   const titleRef = useRef();
   const subtitleRef = useRef();
+  const descriptionRef = useRef();
   const buttonsRef = useRef();
-  const squaresRef = useRef([]);
+  const orbsRef = useRef([]);
+  const particlesRef = useRef([]);
+
+  const handleMouseMove = (e) => {
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const x = (e.clientX - centerX) / rect.width;
+      const y = (e.clientY - centerY) / rect.height;
+      
+      gsap.to(cardRef.current, {
+        rotationY: x * 15,
+        rotationX: -y * 15,
+        x: x * 20,
+        y: y * 20,
+        transformPerspective: 1000,
+        duration: 0.4,
+        ease: "power2.out"
+      });
+      
+      // Parallax effect on inner elements
+      gsap.to([titleRef.current, subtitleRef.current, descriptionRef.current], {
+        x: x * 10,
+        y: y * 10,
+        duration: 0.4,
+        ease: "power2.out"
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (cardRef.current) {
+      gsap.to(cardRef.current, {
+        rotationY: 0,
+        rotationX: 0,
+        x: 0,
+        y: 0,
+        duration: 0.6,
+        ease: "elastic.out(1, 0.3)"
+      });
+      
+      gsap.to([titleRef.current, subtitleRef.current, descriptionRef.current], {
+        x: 0,
+        y: 0,
+        duration: 0.6,
+        ease: "elastic.out(1, 0.3)"
+      });
+    }
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation
-      gsap.fromTo(titleRef.current, 
-        { y: 100, opacity: 0, scale: 0.8 },
-        { y: 0, opacity: 1, scale: 1, duration: 1.2, ease: "back.out(1.7)" }
+      // Card fade in with scale
+      gsap.fromTo(cardRef.current,
+        { opacity: 0, y: 30, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power2.out" }
       );
 
-      // Subtitle animation
+      // Title slide up
+      gsap.fromTo(titleRef.current,
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.3, ease: "power2.out" }
+      );
+
+      // Subtitle slide up
       gsap.fromTo(subtitleRef.current,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, delay: 0.3, ease: "power2.out" }
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power2.out" }
       );
 
-      // Buttons animation
-      gsap.fromTo(buttonsRef.current.children,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, delay: 0.6, stagger: 0.2, ease: "power2.out" }
+      // Description fade in
+      gsap.fromTo(descriptionRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.7, ease: "power2.out" }
       );
 
-     
+      // Buttons fade in
+      gsap.fromTo(buttonsRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.9, ease: "power2.out" }
+      );
+
+      // Floating orbs animation
+      orbsRef.current.forEach((orb, index) => {
+        if (orb) {
+          gsap.to(orb, {
+            y: "random(-20, 20)",
+            x: "random(-15, 15)",
+            rotation: "random(-180, 180)",
+            duration: "random(4, 8)",
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: index * 0.5
+          });
+        }
+      });
+
+      // Particles floating animation
+      particlesRef.current.forEach((particle, index) => {
+        if (particle) {
+          gsap.fromTo(particle,
+            { y: "100vh", opacity: 0, rotation: 0 },
+            {
+              y: "-100px",
+              opacity: 1,
+              rotation: 360,
+              duration: "random(10, 15)",
+              repeat: -1,
+              delay: index * 2,
+              ease: "none"
+            }
+          );
+        }
+      });
 
     }, heroRef);
 
@@ -36,31 +131,34 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={heroRef} id="home" className="min-h-screen flex items-center justify-center px-6 pt-20">
-      <div className="text-center relative">
-        <div className="glass rounded-3xl p-4 sm:p-8 md:p-16 max-w-4xl mx-auto w-full">
-          <h1 ref={titleRef} className="sporty-font text-2xl sm:text-4xl md:text-7xl font-bold text-white mb-4">
-            PORTFOLIO 25-26
-          </h1>
-          <p ref={subtitleRef} className="text-lg sm:text-xl md:text-2xl text-white/80 mb-6 sm:mb-8 gradient-text">
-            Pixel to product..
-          </p>
-          
-          <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="glass glow px-8 py-4 rounded-xl text-white font-semibold hover:scale-105 transition-all duration-300 flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download Resume
-            </button>
-            
-            <button className="glass-dark px-8 py-4 rounded-xl text-white font-semibold hover:scale-105 transition-all duration-300 flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
-              View Work
-            </button>
+    <section ref={heroRef} id="home" className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
+      {/* Background Grid */}
+      <div className="absolute inset-0 grid-background opacity-10"></div>
+      
+
+      
+      {/* Floating Squares */}
+      {[...Array(15)].map((_, i) => (
+        <div
+          key={i}
+          ref={el => particlesRef.current[i] = el}
+          className="floating-square"
+        ></div>
+      ))}
+
+      <div className="text-center relative z-10">
+        <div 
+          ref={cardRef} 
+          className="hero-glass-card"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <h1 ref={titleRef} className="hero-title sporty-font">Portfolio 25-26</h1>
+          <h2 ref={subtitleRef} className="hero-subtitle">product to pixel</h2>
+
+          <div ref={buttonsRef} className="hero-buttons">
+            <a href="#works" className="btn-glass">View Work</a>
+            <a href="#contact" className="btn-primary">Get in Touch</a>
           </div>
         </div>
 
@@ -68,16 +166,25 @@ const Hero = () => {
         <img 
           src="/topcorner.png" 
           alt="Top Corner" 
-          className="absolute -top-5 -right-10 w-20 h-20 opacity-80 hidden md:block"
+          className="absolute -top-5 -right-10 w-16 h-16 md:w-24 md:h-24 opacity-80 floating"
         />
         <img 
           src="/bottomcorner.png" 
           alt="Bottom Corner" 
-          className="absolute -bottom-5 -left-10 w-20 h-20 opacity-80 hidden md:block"
+          className="absolute -bottom-5 -left-10 w-16 h-16 md:w-24 md:h-24 opacity-80 floating"
         />
       </div>
     </section>
   );
+};
+
+// Add orb positions to refs
+const addOrbRef = (el, index) => {
+  if (el) orbsRef.current[index] = el;
+};
+
+const addParticleRef = (el, index) => {
+  if (el) particlesRef.current[index] = el;
 };
 
 export default Hero;
