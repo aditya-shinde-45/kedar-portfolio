@@ -131,7 +131,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={heroRef} id="home" className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
+    <section ref={heroRef} id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-16 sm:pt-20 relative overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 grid-background opacity-10"></div>
       
@@ -166,12 +166,12 @@ const Hero = () => {
         <img 
           src="/topcorner.png" 
           alt="Top Corner" 
-          className="absolute -top-5 -right-10 w-16 h-16 md:w-24 md:h-24 opacity-80 floating"
+          className="absolute -top-3 -right-6 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 opacity-80 floating"
         />
         <img 
           src="/bottomcorner.png" 
           alt="Bottom Corner" 
-          className="absolute -bottom-5 -left-10 w-16 h-16 md:w-24 md:h-24 opacity-80 floating"
+          className="absolute -bottom-3 -left-6 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 opacity-80 floating"
         />
       </div>
     </section>
