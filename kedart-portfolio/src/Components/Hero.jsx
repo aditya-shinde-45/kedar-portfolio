@@ -153,7 +153,7 @@ const Hero = () => {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
-          <h1 ref={titleRef} className="hero-title sporty-font">Portfolio 25-26</h1>
+          <h1 ref={titleRef} className="hero-title sporty-font">ui ux</h1>
           <h2 ref={subtitleRef} className="hero-subtitle">product to pixel</h2>
 
           <div ref={buttonsRef} className="hero-buttons">
