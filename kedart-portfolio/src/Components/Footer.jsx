@@ -103,7 +103,7 @@ const Footer = () => {
                 Privacy Policy
               </a>
               <a href="#" className="text-white/70 hover:text-white text-sm transition-colors">
-                Terms of Services
+                Terms of Ideabliss
               </a>
             </div>
           </div>
